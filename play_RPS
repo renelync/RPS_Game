@@ -5,14 +5,11 @@ print("\n\n-----\n\n")
 import random
 
 def choose_rps():
-    "output: randomly returns rock, paper, or scissors"
-    r = random.randint(0,2)
-    if r == 0:
-        return "rock"
-    elif r == 1:
-        return "scissors"
-    else:
-        return "paper"
+
+    choices = ["rock", "paper", "scissors"]
+    choice = random.choice(choices)
+
+    return choice
 
 def rps():
   """
@@ -24,8 +21,6 @@ def rps():
 
 play = 0
 for i in range(0,2):
-# again = True
-# while again:
   player1 = choose_rps()
   player2 = choose_rps()
   print(f"Player 1 chose {player1}.")
