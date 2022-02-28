@@ -1,8 +1,37 @@
-def rps(player1, player2):
+user_name=input("Hi! What's your name? ")
+print(f"Welcome to my game of RPS, {user_name}!")
+print("\n\n-----\n\n")
+
+import random
+
+def choose_rps():
+    "output: randomly returns rock, paper, or scissors"
+    r = random.randint(0,2)
+    if r == 0:
+        return "rock"
+    elif r == 1:
+        return "scissors"
+    else:
+        return "paper"
+
+def rps():
   """
-  input: the strings player1 and player2
-  output: winner of the game rock, paper, scissors
+  input: n/a
+  output: who wins the game
   """
+  play = random.randint(0,1)
+  return play == 0
+
+play = 0
+for i in range(0,2):
+# again = True
+# while again:
+  player1 = choose_rps()
+  player2 = choose_rps()
+  print(f"Player 1 chose {player1}.")
+  print(f"Player 2 chose {player2}.\n\n")
+  play += i
+    
   if player1 == player2:
     print("It's a tie!")
   elif player1 == "rock":
@@ -20,5 +49,9 @@ def rps(player1, player2):
       print("Player 1 won!")
     else:
       print("Player 2 won!")
+  again = rps()
+  print("\n\n-----\n\n")
+  
+else:
+  print("Thank you for playing!")
 
-rps("rock","scissors")
